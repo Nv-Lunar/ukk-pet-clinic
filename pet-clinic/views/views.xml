@@ -1,0 +1,85 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="view_pet_clinic_list">
+      <field name="name">pet.clinic.list</field>
+      <field name="model">pet_clinic.pet_clinic</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="type"/>
+          <field name="age"/>
+          <field name="owner"/>
+        </tree>
+      </field>
+    </record>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="view_client_clinic_list">
+      <field name="name">client.clinic.list</field>
+      <field name="model">client_clinic.client_clinic</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="customer_id"/>
+          <field name="phone"/>
+          <field name="address"/>
+          <field name="email"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_patient_client_clinic">
+      <field name="name">Clients</field>
+      <field name="res_model">client_clinic.client_clinic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_patient_pet_clinic">
+      <field name="name">Pets</field>
+      <field name="res_model">pet_clinic.pet_clinic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_pet_clinic">
+      <field name="name">Pet Clinic</field>
+      <field name="res_model">pet_clinic.pet_clinic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to open the view -->
+    <record model="ir.actions.server" id="action_server_pet_clinic">
+      <field name="name">Pet Clinic Server Action</field>
+      <field name="model_id" ref="model_pet_clinic_pet_clinic"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Pet Clinic" id="menu_pet_clinic_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Patients" id="menu_pet_clinic_patients" parent="menu_pet_clinic_root" sequence="0"/>
+    <menuitem name="Management" id="menu_pet_clinic_management" parent="menu_pet_clinic_root"  sequence="1" />
+    <menuitem name="Actions" id="menu_pet_clinic_actions" parent="menu_pet_clinic_root"  sequence="2" />
+
+    <!-- actions -->
+    <menuitem name="Client List" id="menu_pet_clinic_client_list" parent="menu_pet_clinic_patients"
+              action="action_patient_client_clinic"/>
+
+    <menuitem name="Pet List" id="menu_pet_clinic_pet_list" parent="menu_pet_clinic_patients"
+              action="action_patient_pet_clinic"/>
+    <menuitem name="Clinic List" id="menu_pet_clinic_management_list" parent="menu_pet_clinic_management"
+              action="action_pet_clinic"/>
+    <menuitem name="Server to List" id="menu_pet_clinic_server_list" parent="menu_pet_clinic_actions"
+              action="action_server_pet_clinic"/>
+  </data>
+</odoo>

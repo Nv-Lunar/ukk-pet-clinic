@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pet_clinic_pet_clinic,pet_clinic.pet_clinic,model_pet_clinic_pet_clinic,base.group_user,1,1,1,1
+access_client_clinic_client_clinic,client_clinic.client_clinic,model_client_clinic_client_clinic,base.group_user,1,1,1,1
+access_pet_category_pet_category,pet_category.pet_category,model_pet_category_pet_category,base.group_user,1,1,1,1
+access_dokter_dokter,dokter.dokter,model_dokter_dokter,base.group_user,1,1,1,1
+access_service_service,service.service,model_service_service,base.group_user,1,1,1,1
+access_client_clinic_line,client_clinic.line,model_client_clinic_line,base.group_user,1,1,1,1
+access_client_clinic_product_line,client_clinic.product_line,model_client_clinic_product_line,base.group_user,1,1,1,1

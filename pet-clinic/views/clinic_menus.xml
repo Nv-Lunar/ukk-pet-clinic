@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <!-- Root menu for Pet Clinic -->
+    <menuitem name="Pet Clinic" id="menu_pet_clinic_root"/>
+
+    <!-- Submenus under Pet Clinic -->
+    <menuitem name="Patients" id="menu_pet_clinic_patients" parent="menu_pet_clinic_root" sequence="0"/>
+    <menuitem name="Appointment" id="menu_appointment" parent="menu_pet_clinic_root" action="calendar.action_calendar_event" sequence="1" />
+    <menuitem name="Contact" id="menu_contact" parent="menu_pet_clinic_root" action="contacts.action_contacts" sequence="2" />
+    <menuitem name="Master Data" id="menu_master_data" parent="menu_pet_clinic_root" sequence="3" />
+
+
+    <!-- Client List action -->
+    <menuitem name="Client List" id="menu_pet_clinic_client_list" parent="menu_pet_clinic_patients"
+              action="action_patient_client_clinic"/>
+
+    <!-- Pet List action -->
+    <menuitem name="Pet List" id="menu_pet_clinic_pet_list" parent="menu_pet_clinic_patients"
+              action="action_patient_pet_clinic"/>
+
+    <!-- Clinic Management List -->
+    
+
+    <!-- Server to List action -->
+   
+
+    <!-- Master Data -->
+    <menuitem name="Pet Kategori" id="menu_pet_kategori" parent="menu_master_data"
+              action="action_pet_kategori"/>
+
+    <menuitem name="Dokter" id="menu_dokter" parent="menu_master_data"
+              action="action_dokter"/>
+
+    <menuitem name="Service" id="menu_service" parent="menu_master_data"
+              action="action_service"/>
+  </data>
+</odoo>

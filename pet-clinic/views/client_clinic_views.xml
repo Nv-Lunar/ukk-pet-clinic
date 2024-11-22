@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+        <!-- List view for client clinic -->
+        <record model="ir.ui.view" id="view_client_clinic_list">
+            <field name="name">client.clinic.list</field>
+            <field name="model">client_clinic.client_clinic</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="customer_id"/>
+                    <field name="booking_date"/>
+                    <field name="worker_id"/>
+                    <field name="total_time" readonly="1"/>
+                    <field name="total_price" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_client_clinic_form" model="ir.ui.view">
+            <field name="name">client.clinic.form</field>
+            <field name="model">client_clinic.client_clinic</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_cancel" type="object" string="Cancel" invisible="state in ['cancel', 'completed']"/> 
+                        <button name="action_done" type="object" string="Done" invisible="state in ['cancel', 'paid', 'not paid']"/>
+                        <button name="action_pay" type="object" string="Pay" invisible="state in ['cancel', 'paid', 'booking']"/>
+                        <field name="state" widget="statusbar" statusbar_visible="cancel,booking,not paid,paid" style="float: right;"/> 
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group string="Informasi Pelanggan">
+                                <field name="name" readonly="1"/>
+                                <field name="customer_id"/>
+                                <field name="phone"/>
+                                <field name="address"/>
+                                <field name="email"/>
+                            </group>
+                            <group string="Informasi Booking">
+                                <field name="booking_date" required="1"/>
+                                <field name="jam_antar" required="1"/>
+                                <field name="jam_selesai" readonly="1"/>
+                                <field name="worker_id" required="1"/>
+                                <field name="total_time" readonly="1"/>
+                                <field name="total_price" readonly="1"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Peliharaan dan Layanan">
+                                <field name="pet_service_lines">
+                                    <tree editable="bottom" class="o_list_view">
+                                        <field name="pet_id" widget="many2one"/>
+                                        <field name="service_id" widget="many2one"/>
+                                        <field name="rate" readonly="1"/>
+                                        <field name="price_service" readonly="1"/>
+                                        <field name="avg_time" readonly="1"/>
+                                        <field name="real_price" readonly="1"/>
+                                        <field name="real_time" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Produk">
+                                <field name="product_line_ids">
+                                    <tree editable="bottom">
+                                        <field name="pet_id" widget="many2one"/>
+                                        <field name="product_id" widget="many2one"/>
+                                        <field name="quantity" readonly="1"/>
+                                        <field name="quantity_selected"/>
+                                        <field name="sales_price" readonly="1"/>
+                                        <field name="total_price" readonly="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Payment">
+                              <group>
+                                <group>
+                                  <field name="payment_method_id" widget="many2one"/>
+                                  <field name="payment_amount"/>
+                                </group>
+                                <group>
+                                  <field name="payment_date"/>
+                    
+                                </group>
+                              </group>
+                               
+                              
+                  
+                                
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

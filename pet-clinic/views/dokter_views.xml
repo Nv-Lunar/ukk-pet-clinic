@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <!-- List view for client clinic -->
+    <record model="ir.ui.view" id="view_dokter_list">
+      <field name="name">dokter.list</field>
+      <field name="model">dokter.dokter</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

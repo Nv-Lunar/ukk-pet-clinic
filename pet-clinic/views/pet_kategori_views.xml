@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <!-- List view for client clinic -->
+    <record model="ir.ui.view" id="view_pet_kategori_list">
+      <field name="name">pet.category.list</field>
+      <field name="model">pet_category.pet_category</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="rate"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

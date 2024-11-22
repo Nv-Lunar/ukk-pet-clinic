@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <!-- List view for pet clinic -->
+    <record model="ir.ui.view" id="view_pet_clinic_list">
+      <field name="name">pet.clinic.list</field>
+      <field name="model">pet_clinic.pet_clinic</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="pet_id"/>
+          <field name="pet_name"/>
+          <field name="pet_age"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

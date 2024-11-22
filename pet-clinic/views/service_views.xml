@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <!-- List view for client clinic -->
+    <record model="ir.ui.view" id="view_service_list">
+      <field name="name">service.list</field>
+      <field name="model">service.service</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="price_service"/>
+          <field name="avg_time"/>
+        </tree>
+      </field>
+    </record>
+  </data>
+</odoo>

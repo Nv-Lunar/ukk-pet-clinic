@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+    <!-- Actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_patient_client_clinic">
+      <field name="name">Clients</field>
+      <field name="res_model">client_clinic.client_clinic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_patient_pet_clinic">
+      <field name="name">Pets</field>
+      <field name="res_model">pet_clinic.pet_clinic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_pet_clinic">
+      <field name="name">Pet Clinic</field>
+      <field name="res_model">pet_clinic.pet_clinic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_pet_kategori">
+      <field name="name">Master Data Kategori</field>
+      <field name="res_model">pet_category.pet_category</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dokter">
+      <field name="name">Master Data Dokter</field>
+      <field name="res_model">dokter.dokter</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_service">
+      <field name="name">Master Data service</field>
+      <field name="res_model">service.service</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Server action to open the view -->
+    <record model="ir.actions.server" id="action_server_pet_clinic">
+      <field name="name">Pet Clinic Server Action</field>
+      <field name="model_id" ref="model_pet_clinic_pet_clinic"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+  </data>
+</odoo>
