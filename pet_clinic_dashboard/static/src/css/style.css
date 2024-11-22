@@ -1,0 +1,17 @@
+.circle-container {
+    width: 100px;
+    height: 100px;
+    background-color: white; /* Optional: to match the card background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    z-index: 2; /* Make sure it's on top of the card */
+}
+
+/* Icon styling */
+.circle-icon {
+    font-size: 48px;
+    color: #007bff; /* Icon color (change as needed) */
+}

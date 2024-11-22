@@ -1,0 +1,37 @@
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl.KpiCard" owl="1">
+        <div class="row">
+            <t t-foreach="state.kpiData" t-as="kpi" t-key="kpi.name">
+                <div class="col-lg-4 m-0 p-0 my-lg-0 my-5">
+                    <div class="position-relative shadow-sm border m-2 p-4 bg-white text-center kpi-card" t-att-data-name="kpi.name">
+                        
+                        <!-- Div setengah lingkaran -->
+                        <div class="circle-container position-absolute" style="top: -50px; left: 50%; transform: translateX(-50%);"> 
+                            <i t-att-class="'fa ' + kpi.icon + ' circle-icon'"></i>
+                        </div> 
+
+                        <!-- Nama KPI dengan tambahan margin-top -->
+                        <div class="h3 text-muted" style="margin-top: 30px;">
+                            <span t-esc="kpi.name"/>
+                        </div>
+                        
+                        <!-- Nilai KPI -->
+                        <div class="h1 fw-bold text-dark" style="font-size: 35px;">
+                            <span t-esc="kpi.value"/>
+                        </div>
+                        
+                        <!-- Persentase perubahan -->
+                        <div class="h3 mt-3">
+                            <span t-attf-class="text-#{kpi.percentage > 0 ? 'success':'danger'}">
+                                <span t-attf-class="me-1 fa fa-arrow-#{kpi.percentage > 0 ? 'up':'down'}"/>
+                                <span t-esc="kpi.percentage"/>%
+                            </span>
+                            <span> since last period</span>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates> -->

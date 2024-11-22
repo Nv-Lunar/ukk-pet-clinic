@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.ClinicDashboard" owl="1">
+            <div class="container-fluid vh-100 overflow-auto bg-muted">
+            <!-- Header Full Width -->
+            <div class="mx-3 my-3">
+                <div class="col-12">
+                    <div class="shadow-sm border p-4 bg-white">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                            <h1 class="text-primary fw-bold">Custom Sales Dashboard</h1>
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center me-3">
+                                    <label for="startDate" class="me-2">Start Date:</label>
+                                    <input id="startDate" type="date" class="form-control" />
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <label for="endDate" class="me-2">End Date:</label>
+                                    <input id="endDate" type="date" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="mx-3 my-5">
+                <KpiCard/>
+            </div>
+            
+
+            <!-- Pie, Donut, Bar Charts -->
+            <div class="row mx-0">
+                <!-- Top Products (Pie Chart) -->
+                <div class="col-lg-3 col-md-5 col-sm-10 m-0 p-2">
+                    <div class="shadow-sm border p-4 bg-white h-100">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="text-primary fw-bold">Top Products</h3>
+                            <div class="px-3 py-1 bg-primary cursor-pointer">
+                                <span class="fa fa-arrow-right text-white" />
+                            </div>
+                        </div>
+                        <ChartRenderer type="'doughnut'" title="'Top Products'" />
+                    </div>
+                </div>
+
+                <!-- Top Sales Revenue (Donut Chart) -->
+                <div class="col-lg-3 col-md-5 col-sm-10 m-0 p-2">
+                    <div class="shadow-sm border p-4 bg-white h-100">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="text-primary fw-bold">Top Sales Revenue</h3>
+                            <div class="px-3 py-1 bg-primary cursor-pointer">
+                                <span class="fa fa-arrow-right text-white" />
+                            </div>
+                        </div>
+                        <ChartRenderer type="'pie'" title="'Top Sales Revenue'" />
+                    </div>
+                </div>
+
+                <!-- Sales Revenue (Bar Chart) -->
+                <div class="col-lg-6 col-md-12 col-sm-12 m-0 p-2">
+                    <div class="shadow-sm border p-4 bg-white h-100">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="text-primary fw-bold">Sales Revenue</h3>
+                            <div class="px-3 py-1 bg-primary cursor-pointer">
+                                <span class="fa fa-arrow-right text-white" />
+                            </div>
+                        </div>
+                        <ChartRenderer type="'bar'" title="'Sales Report'" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Width Line Chart -->
+            <div class="row mx-0 my-3">
+                <div class="col-lg-8 col-md-12 col-sm-12 m-0 p-2 mb-5">
+                    <div class="shadow-sm border p-4 bg-white h-100">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="text-primary fw-bold">Daily Sales</h3>
+                            <div class="px-3 py-1 bg-primary cursor-pointer">
+                                <span class="fa fa-arrow-right text-white" />
+                            </div>
+                        </div>
+                        <ChartRenderer type="'line'" title="'Daily Sales'" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 m-0 p-2 mb-5">
+                    <div class="shadow-sm border bg-white h-100">
+                        <ProductCardList />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
